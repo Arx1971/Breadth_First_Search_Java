@@ -8,7 +8,7 @@ public class Queue <T>{
 	public class Node<T>{
 		
 		T data;
-		Node next;
+		Node <T>next;
 		
 		public Node(T data) {
 			this.data = data;
@@ -16,7 +16,7 @@ public class Queue <T>{
 		}
 		
 	}
-	Node head;
+	Node<T> head;
 	
 	public void display() {
 		Node<T> myNode = head;
@@ -55,7 +55,7 @@ public class Queue <T>{
 		head = head.next;
 	}
 	
-	public Object front() { // generic class; instead returning the integer(int) type simply, 
+	public T front() { // generic class; instead returning the integer(int) type simply, 
 							// I return object. 
 		return head.data;
 	}

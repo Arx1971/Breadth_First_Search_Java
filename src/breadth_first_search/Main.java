@@ -36,17 +36,15 @@ public class Main {
 		for(int i=0; i<=node; i++) {
 			level[i] = 0;
 			visited[i] = false;
+			graph[i] = new ArrayList<>();
 		}
 		int n1,n2;
 		for(int i=1; i<=edge; i++) {
 			n1 = input.nextInt();
 			n2 = input.nextInt();
-			graph[n1] = new ArrayList<>();
 			graph[n1].add(n2);
-			graph[n2] = new ArrayList<>();
 			graph[n2].add(n1);
-		}
-		
+		}		
 		breadth_first_search(1);
 		print_path(1, node);
 		
@@ -88,17 +86,28 @@ public class Main {
 	
 }
 
+
 /**
- Input System: 
-Node - 6
-Edge - 7
+ * Node - 6
+ * Edge - 7
+ * 1 -> 2,3 
+ * 2 -> 1,3,4
+ * 3 -> 1,2,4
+ * 4 -> 5
+ * 5 -> 6
+ * 6 -> 5
+ * 
+ * 
+ * 
+ * 
+ */
+
+/**6
+7
 1 2
 1 3
 2 3
-3 4
 2 4
 4 5
 5 6
-output: 1 -> 3 -> 4 -> 5 -> 6
- */
-
+3 4*/
